@@ -1,15 +1,28 @@
-using OpenAI.Chat;
+using System.Collections.Generic;
 
 namespace CpmDemoApp.Models
 {
-     public class Messages
+    public static class Messages
     {
-        public static IList<Message> MessagesListStatic { get; set; } = new List<Message>();
-        public static IList<ChatMessage> OpenAIConversationHistory { get; set; } = new List<ChatMessage>();
+        public static List<Message> MessagesListStatic { get; } = new List<Message>();
+        public static List<ChatMessage> ConversationHistory { get; } = new List<ChatMessage>();
     }
 
     public class Message
     {
-        public string Text { get; set; } = null;
+        public string Text { get; set; }
+    }
+
+    public abstract class ChatMessage
+    {
+        public string Content { get; set; }
+    }
+
+    public class UserMessage : ChatMessage
+    {
+    }
+
+    public class AssistantMessage : ChatMessage
+    {
     }
 }

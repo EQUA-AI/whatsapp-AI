@@ -362,3 +362,4 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /CpmDemoApp/Properties/ServiceDependencies/WhatsAppAIDemo - Web Deploy/profile.arm.json
+/CpmDemoApp/appsettings.json

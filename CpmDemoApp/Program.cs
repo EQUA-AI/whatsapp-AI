@@ -1,10 +1,15 @@
 using CpmDemoApp.Models;
+using Microsoft.Extensions.Options;
+using Azure;
+using Azure.Search.Documents;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.Configure<NotificationMessagesClientOptions>(builder.Configuration.GetSection("NotificationMessagesClientOptions"));
 builder.Services.Configure<OpenAIClientOptions>(builder.Configuration.GetSection("OpenAIClientOptions"));
+builder.Services.Configure<AzureAISearchOptions>(builder.Configuration.GetSection("AzureAISearchOptions"));
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
